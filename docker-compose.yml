@@ -1,0 +1,32 @@
+version: "3"
+services:
+  web:
+    build: ./server
+    container_name: DooD-web
+    volumes:
+      - ./server/app:/app
+      - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      - 80:8000
+
+  perl:
+    build: ./docker/perl
+    container_name: DooD-perl
+    volumes:
+      - ./server/app/run-scripts:/user/run-scripts
+    tty: true
+
+  rust:
+    build: ./docker/rust
+    container_name: DooD-rust
+    volumes:
+      - ./server/app/run-scripts:/user/run-scripts
+    tty: true
+
+  go:
+    build: ./docker/go
+    container_name: DooD-go
+    volumes:
+      - ./server/app/run-scripts:/user/run-scripts
+    tty: true
+
