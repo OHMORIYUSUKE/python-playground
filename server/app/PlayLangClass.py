@@ -29,12 +29,12 @@ class PlayLangClass:
     
     async def run_code(self, lang):
         try:
-            proc = subprocess.run(f"docker exec DooD-{lang} sh {lang}.sh", timeout=10, shell=True, stdout=PIPE, stderr=PIPE, text=True)
+            proc = subprocess.run(f"docker exec DooD-{lang} sh {lang}.sh", timeout=100, shell=True, stdout=PIPE, stderr=PIPE, text=True)
             out = proc.stdout
             err = proc.stderr # エラーメッセージ
         except TimeoutExpired as e:
             print(f"ERROR : {e}")
-            err = "ERROR : " + str(e) + "\nMessage : 10秒以内で実行できるコードにしてください。"
+            err = "ERROR : " + str(e) + "\nMessage : 100秒以内で実行できるコードにしてください。"
             out = ''
         return {'out': out,'err': err}
 
@@ -44,6 +44,10 @@ class PlayLangClass:
             langFile = "pl"
         elif lang == 'go':
             langFile = "go"
+        elif lang == 'kotlin':
+            langFile = "kt"
+        elif lang == 'julia':
+            langFile = "jl"
         else:
             langFile = "rs"
         return langFile

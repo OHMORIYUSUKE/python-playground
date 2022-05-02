@@ -29,4 +29,17 @@ services:
     volumes:
       - ./server/app/run-scripts:/user/run-scripts
     tty: true
+  
+  kotlin:
+    build: ./docker/kotlin
+    container_name: DooD-kotlin
+    volumes:
+      - ./server/app/run-scripts:/user/run-scripts
+    tty: true
 
+  julia:
+    build: ./docker/julia
+    container_name: DooD-julia
+    volumes:
+      - ./server/app/run-scripts:/user/run-scripts
+    tty: true
