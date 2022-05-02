@@ -1,0 +1,22 @@
+<html>
+<head>
+    <title>Playground</title>
+    <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet">
+</head>
+<body>
+    <form action="./">
+        <textarea name="code" rows="10" cols="70">{{ code }}</textarea><br>
+        <textarea name="input" rows="3" cols="70">{{ input }}</textarea><br>
+        <textarea name="lang" rows="1" cols="6">{{ lang }}</textarea><br>
+        <input type="submit" value="送信">
+    </form>
+    {% if not err %}
+    <p>OK</p>
+    <code>{{ out }}</code>
+    {% endif %}
+    {% if err %}
+    <p>ERROR</p>
+    <code>{{ err }}</code>
+    {% endif %}
+</body>
+</html>

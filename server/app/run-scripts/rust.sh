@@ -2,4 +2,4 @@
 
 rustc main.rs
 
-./main
+./main < input.txt

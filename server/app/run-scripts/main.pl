@@ -1,6 +1,2 @@
-#!/usr/bin/perl
-
-print "Hello Perl";
-
-printaaa "aaa"
-; 
+my $line = <STDIN>;
+print "入力された値 : $line";
