@@ -2,7 +2,7 @@ version: "3"
 services:
   web:
     build: ./server
-    container_name: DooD-web
+    container_name: playground-web
     volumes:
       - ./server/app:/app
       - /var/run/docker.sock:/var/run/docker.sock
@@ -11,35 +11,35 @@ services:
 
   perl:
     build: ./docker/perl
-    container_name: DooD-perl
+    container_name: playground-perl
     volumes:
       - ./server/app/run-scripts:/user/run-scripts
     tty: true
 
   rust:
     build: ./docker/rust
-    container_name: DooD-rust
+    container_name: playground-rust
     volumes:
       - ./server/app/run-scripts:/user/run-scripts
     tty: true
 
   go:
     build: ./docker/go
-    container_name: DooD-go
+    container_name: playground-go
     volumes:
       - ./server/app/run-scripts:/user/run-scripts
     tty: true
 
   python:
     build: ./docker/python
-    container_name: DooD-python
+    container_name: playground-python
     volumes:
       - ./server/app/run-scripts:/user/run-scripts
     tty: true
 
   julia:
     build: ./docker/julia
-    container_name: DooD-julia
+    container_name: playground-julia
     volumes:
       - ./server/app/run-scripts:/user/run-scripts
     tty: true
