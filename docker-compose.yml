@@ -29,10 +29,10 @@ services:
     volumes:
       - ./server/app/run-scripts:/user/run-scripts
     tty: true
-  
-  kotlin:
-    build: ./docker/kotlin
-    container_name: DooD-kotlin
+
+  python:
+    build: ./docker/python
+    container_name: DooD-python
     volumes:
       - ./server/app/run-scripts:/user/run-scripts
     tty: true
