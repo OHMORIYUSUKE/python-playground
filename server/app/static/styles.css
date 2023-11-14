@@ -1,4 +1,34 @@
-code{
-    white-space:pre-wrap;
-    word-wrap:break-word;
+code {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+textarea {
+  width: 100%;
+}
+select {
+  width: 100%;
+}
+#main {
+  width: 700px;
+  text-align: center;
+  margin: 0 auto;
+}
+p {
+  margin: 0;
+}
+#exitcode0 {
+  color: aliceblue;
+}
+#exitcode1 {
+  color: red;
+}
+#terminal {
+  background-color: black;
+  margin: 0;
+  text-align: start;
+  padding: 10px;
+}
+#submit {
+  width: 100%;
+  margin-top: 20px;
 }

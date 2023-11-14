@@ -1,2 +1,9 @@
-my $line = <STDIN>;
-print "入力された値 : $line";
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+my $input = <STDIN>;
+chomp($input);
+
+print "hello $input";

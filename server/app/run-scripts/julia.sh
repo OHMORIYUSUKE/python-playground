@@ -1,3 +1,3 @@
 #!/bin/bash
 
-julia main.jl 
+julia main.jl < input.txt

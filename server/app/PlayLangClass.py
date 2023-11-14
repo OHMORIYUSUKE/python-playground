@@ -48,6 +48,8 @@ class PlayLangClass:
             langFile = "kt"
         elif lang == 'julia':
             langFile = "jl"
-        else:
+        elif lang == "rust":
             langFile = "rs"
+        elif lang == "python":
+            langFile = "py"
         return langFile

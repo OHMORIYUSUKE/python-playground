@@ -1,1 +1,3 @@
-println("Hello World")
+input = readline()
+
+println("hello $input")

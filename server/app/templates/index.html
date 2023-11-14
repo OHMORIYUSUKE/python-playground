@@ -1,22 +1,46 @@
 <html>
-<head>
+  <head>
     <title>Playground</title>
-    <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet">
-</head>
-<body>
-    <form action="./">
-        <textarea name="code" rows="10" cols="70">{{ code }}</textarea><br>
-        <textarea name="input" rows="3" cols="70">{{ input }}</textarea><br>
-        <textarea name="lang" rows="1" cols="6">{{ lang }}</textarea><br>
-        <input type="submit" value="送信">
-    </form>
-    {% if not err %}
-    <p>OK</p>
-    <code>{{ out }}</code>
-    {% endif %}
-    {% if err %}
-    <p>ERROR</p>
-    <code>{{ err }}</code>
-    {% endif %}
-</body>
+    <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="main">
+        <div>
+            <p>サンプルコード</p>
+            <a href="http://localhost/?lang=perl">Perl</a>
+            <a href="http://localhost/?lang=go"> Go</a>
+            <a href="http://localhost/?lang=python">Python</a>
+            <a href="http://localhost/?lang=julia">Julia</a>
+            <a href="http://localhost/?lang=rust">Rust</a>
+        </div>
+        <form action="./">
+            <p>言語</p>
+            <select name="lang">
+              <option value="perl" {% if lang == "perl" %}selected{% endif %}>Perl</option>
+              <option value="go" {% if lang == "go" %}selected{% endif %}>Go</option>
+              <option value="python" {% if lang == "python" %}selected{% endif %}>Python</option>
+              <option value="julia" {% if lang == "julia" %}selected{% endif %}>Julia</option>
+              <option value="rust" {% if lang == "rust" %}selected{% endif %}>Rust</option>
+            </select>
+            <p>コード</p>
+            <textarea name="code" rows="10" cols="70">{{ code }}</textarea>
+            <p>入力</p>
+            <textarea name="input" rows="3" cols="70">{{ input }}</textarea>
+            <input id="submit" type="submit" value="実行" />
+          </form>
+          <div id="terminal">
+            {% if out %}
+            <dev id="exitcode0">
+              <p>成功🎉</p>
+              <code>{{ out }}</code>
+            </dev>
+            {% endif %} {% if err %}
+            <dev id="exitcode1">
+              <p>エラー😢</p>
+              <code>{{ err }}</code>
+            </dev>
+            {% endif %}
+          </div>
+    </div>
+  </body>
 </html>

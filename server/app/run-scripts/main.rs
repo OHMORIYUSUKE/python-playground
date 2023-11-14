@@ -1,9 +1,10 @@
+use std::io;
+
 fn main() {
-    println!("何か文字を入力して下さい:");
+    let mut input = String::new();
 
-    let mut word = String::new();
-    std::io::stdin().read_line(&mut word).ok();
-    let answer = word.trim().to_string();
+    io::stdin().read_line(&mut input).expect("Failed to read line");
+    let input = input.trim();
 
-    println!("{}", answer);
+    println!("hello {}", input);
 }
