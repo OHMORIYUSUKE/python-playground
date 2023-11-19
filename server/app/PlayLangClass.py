@@ -2,6 +2,8 @@ import subprocess
 from subprocess import PIPE,TimeoutExpired
 import asyncio
 
+import docker
+
 class PlayLangClass:
 
     def __init__(self, code, input, lang):
@@ -29,13 +31,18 @@ class PlayLangClass:
     
     async def run_code(self, lang):
         try:
-            proc = subprocess.run(f"docker exec playground-{lang} sh {lang}.sh", timeout=100, shell=True, stdout=PIPE, stderr=PIPE, text=True)
-            out = proc.stdout
-            err = proc.stderr # エラーメッセージ
+            client = docker.from_env()
+            result = client.containers.get(f"playground-{lang}").exec_run(cmd=["sh", f"{lang}.sh"])
+            out = ""
+            err = ""
+            if result.exit_code == 0:
+                out = result.output.decode('utf-8')
+            else:
+                err = result.output.decode('utf-8') # エラーメッセージ
         except TimeoutExpired as e:
             print(f"ERROR : {e}")
             err = "ERROR : " + str(e) + "\nMessage : 100秒以内で実行できるコードにしてください。"
-            out = ''
+            out = ""
         return {'out': out,'err': err}
 
     def select_lang(self, lang):
