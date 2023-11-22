@@ -12,6 +12,7 @@
             <a href="http://localhost/?lang=python">Python</a>
             <a href="http://localhost/?lang=julia">Julia</a>
             <a href="http://localhost/?lang=rust">Rust</a>
+            <a href="http://localhost/?lang=swift">Swift</a>
         </div>
         <form action="./">
             <p>言語</p>
@@ -21,6 +22,7 @@
               <option value="python" {% if lang == "python" %}selected{% endif %}>Python</option>
               <option value="julia" {% if lang == "julia" %}selected{% endif %}>Julia</option>
               <option value="rust" {% if lang == "rust" %}selected{% endif %}>Rust</option>
+              <option value="swift" {% if lang == "swift" %}selected{% endif %}>Swift</option>
             </select>
             <p>コード</p>
             <textarea name="code" rows="10" cols="70">{{ code }}</textarea>

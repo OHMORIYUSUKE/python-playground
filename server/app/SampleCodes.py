@@ -51,6 +51,13 @@ greeting = f"hello {user_input}"
 
 print(greeting)
 '''
+    elif selected_language == "swift":
+        return '''import Foundation
+
+if let input = readLine() {
+    print("hello \(input)")
+}
+'''
     else:
         print("Unsupported language")
 
