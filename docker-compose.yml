@@ -43,3 +43,10 @@ services:
     volumes:
       - ./server/app/run-scripts:/user/run-scripts
     tty: true
+
+  swift:
+    build: ./docker/swift
+    container_name: playground-swift
+    volumes:
+      - ./server/app/run-scripts:/user/run-scripts
+    tty: true

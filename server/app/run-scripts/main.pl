@@ -1,9 +1,6 @@
-#!/usr/bin/perl
-
-use strict;
-use warnings;
-
-my $input = <STDIN>;
-chomp($input);
-
-print "hello $input";
+print("Input any word.")
+if let input = readLine() {
+print(input)
+} else {
+print("Failed to get any keyboard input.")
+}
