@@ -61,4 +61,6 @@ class PlayLangClass:
             langFile = "py"
         elif lang == "swift":
             langFile = "swift"
+        elif lang == "ruby":
+            langFile = "rb"
         return langFile

@@ -11,6 +11,12 @@ chomp($input);
 
 print "hello $input";
 '''
+    elif selected_language == "ruby":
+        return '''user_input = gets.chomp
+
+greeting = "hello #{user_input}"
+
+puts greeting'''
     elif selected_language == "go":
         return '''package main
 

@@ -9,6 +9,13 @@ services:
     ports:
       - 80:8000
 
+  ruby:
+    build: ./docker/ruby
+    container_name: playground-ruby
+    volumes:
+      - ./server/app/run-scripts:/user/run-scripts
+    tty: true
+
   perl:
     build: ./docker/perl
     container_name: playground-perl

@@ -8,6 +8,7 @@
         <div>
             <p>サンプルコード</p>
             <a href="http://localhost/?lang=perl">Perl</a>
+            <a href="http://localhost/?lang=ruby">Ruby</a>
             <a href="http://localhost/?lang=go"> Go</a>
             <a href="http://localhost/?lang=python">Python</a>
             <a href="http://localhost/?lang=julia">Julia</a>
@@ -18,6 +19,7 @@
             <p>言語</p>
             <select name="lang">
               <option value="perl" {% if lang == "perl" %}selected{% endif %}>Perl</option>
+              <option value="ruby" {% if lang == "ruby" %}selected{% endif %}>Ruby</option>
               <option value="go" {% if lang == "go" %}selected{% endif %}>Go</option>
               <option value="python" {% if lang == "python" %}selected{% endif %}>Python</option>
               <option value="julia" {% if lang == "julia" %}selected{% endif %}>Julia</option>
@@ -33,12 +35,10 @@
           <div id="terminal">
             {% if out %}
             <dev id="exitcode0">
-              <p>成功🎉</p>
               <code>{{ out }}</code>
             </dev>
             {% endif %} {% if err %}
             <dev id="exitcode1">
-              <p>エラー😢</p>
               <code>{{ err }}</code>
             </dev>
             {% endif %}
