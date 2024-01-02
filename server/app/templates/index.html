@@ -33,13 +33,13 @@
             <input id="submit" type="submit" value="実行" />
           </form>
           <div id="terminal">
-            {% if out %}
+            {% if exit_code == 0 %}
             <dev id="exitcode0">
-              <code>{{ out }}</code>
+              <code>{{ result }}</code>
             </dev>
-            {% endif %} {% if err %}
+            {% else %}
             <dev id="exitcode1">
-              <code>{{ err }}</code>
+              <code>{{ result }}</code>
             </dev>
             {% endif %}
           </div>

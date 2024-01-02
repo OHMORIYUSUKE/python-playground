@@ -1,3 +1,3 @@
 FROM perl:5.26
 
-WORKDIR /user/run-scripts
+WORKDIR /user/share/scripts

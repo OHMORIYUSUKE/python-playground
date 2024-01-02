@@ -13,47 +13,47 @@ services:
     build: ./docker/ruby
     container_name: playground-ruby
     volumes:
-      - ./server/app/run-scripts:/user/run-scripts
+      - ./server/app/share/scripts:/user/share/scripts
     tty: true
 
   perl:
     build: ./docker/perl
     container_name: playground-perl
     volumes:
-      - ./server/app/run-scripts:/user/run-scripts
+      - ./server/app/share/scripts:/user/share/scripts
     tty: true
 
   rust:
     build: ./docker/rust
     container_name: playground-rust
     volumes:
-      - ./server/app/run-scripts:/user/run-scripts
+      - ./server/app/share/scripts:/user/share/scripts
     tty: true
 
   go:
     build: ./docker/go
     container_name: playground-go
     volumes:
-      - ./server/app/run-scripts:/user/run-scripts
+      - ./server/app/share/scripts:/user/share/scripts
     tty: true
 
   python:
     build: ./docker/python
     container_name: playground-python
     volumes:
-      - ./server/app/run-scripts:/user/run-scripts
+      - ./server/app/share/scripts:/user/share/scripts
     tty: true
 
   julia:
     build: ./docker/julia
     container_name: playground-julia
     volumes:
-      - ./server/app/run-scripts:/user/run-scripts
+      - ./server/app/share/scripts:/user/share/scripts
     tty: true
 
   swift:
     build: ./docker/swift
     container_name: playground-swift
     volumes:
-      - ./server/app/run-scripts:/user/run-scripts
+      - ./server/app/share/scripts:/user/share/scripts
     tty: true

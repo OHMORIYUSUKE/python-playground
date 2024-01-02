@@ -1,3 +1,3 @@
 FROM rust:1.40
 
-WORKDIR /user/run-scripts
+WORKDIR /user/share/scripts

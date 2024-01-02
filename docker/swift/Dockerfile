@@ -1,3 +1,3 @@
 FROM swift:latest
 
-WORKDIR /user/run-scripts
+WORKDIR /user/share/scripts

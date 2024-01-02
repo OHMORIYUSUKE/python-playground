@@ -23,4 +23,14 @@ def read_item(request: Request, code: str = None, lang: str = "perl", input: str
     if code == None:
         code = SampleCodes(lang)
         input = "world!"
-    return templates.TemplateResponse("index.html", {"request": request, "out": res["out"], "err": res["err"], "code": code, "lang": lang, "input": input})
+    return templates.TemplateResponse(
+        "index.html",
+        {
+            "request": request,
+            "result": res["result"],
+            "exit_code": res["exit_code"],
+            "code": code,
+            "lang": lang,
+            "input": input
+        }
+    )

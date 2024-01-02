@@ -1,3 +1,3 @@
 FROM julia
 
-WORKDIR /user/run-scripts
+WORKDIR /user/share/scripts
