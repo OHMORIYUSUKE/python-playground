@@ -1,2 +1,4 @@
 .env
 .env.local
+/server/app/share/scripts*
+!server/app/share/scripts.gitkeep
